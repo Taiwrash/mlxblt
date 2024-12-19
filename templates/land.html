@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraudo: Fraud detection</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="flex items-center justify-center min-h-screen bg-blue-500">
+    <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold mb-6 text-center text-blue-500">Start Detecting Fraud Today</h2>
+        <form action="/predict" method="POST" class="space-y-4">
+            <div>
+                <label for="ipaddr" class="block text-sm font-medium text-gray-700">IP Address</label>
+                <input placeholder="IPV4 only" type="text" id="ipaddr" name="ipaddr" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+            </div>
+            <div>
+                <label for="uacc" class="block text-sm font-medium text-gray-700">User Account</label>
+                <input type="text" id="uacc" name="uacc" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+            </div>
+            <div>
+                <label for="dacc" class="block text-sm font-medium text-gray-700">Destination Account</label>
+                <input type="text" id="dacc" name="dacc" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+            </div>
+            <div>
+                <label for="age" class="block text-sm font-medium text-gray-700">Age of User</label>
+                <input type="text" id="age" name="age" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+            </div>
+            <div>
+                <label for="tdate" class="block text-sm font-medium text-gray-700">Transaction Date</label>
+                <input type="date" id="tdate" name="tdate" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+            </div>
+            <div>
+                <label for="payment_type" class="block text-sm font-medium text-gray-700">Payment Type</label>
+                <select id="payment_type" name="payment_type" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                    <option value="">Select a payment type</option>
+                    <option value="PAYMENT">Payment</option>
+                    <option value="TRANSFER">Transfer</option>
+                    <option value="CASH_OUT">Cash Out</option>
+                    <option value="CASH_IN">Cash In</option>
+                    <option value="DEBIT">Debit</option>
+                </select>
+            </div>            
+            <div>
+                <label for="withdraw" class="block text-sm font-medium text-gray-700">Amount Withdraw</label>
+                <input type="number" id="withdraw" name="withdraw" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+            </div>
+            <div>
+                <label for="obalance" class="block text-sm font-medium text-gray-700">Old Balance</label>
+                <input type="number" id="obalance" name="obalance" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+            </div>
+            <div>
+                <label for="nbalance" class="block text-sm font-medium text-gray-700">New Balance</label>
+                <input type="number" id="nbalance" name="nbalance" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+            </div>
+            <div class="flex items-center justify-between">
+                <button type="submit" class="w-full py-2 px-4 bg-blue-500 hover:bg-indigo-700 text-white font-bold rounded-md shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                    Predict
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
